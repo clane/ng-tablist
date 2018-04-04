@@ -2,6 +2,7 @@
 <ul class="tabs" role="tablist" aria-owns="xTab1id xTab2id xTab3id xTab4id">
 <li role="presentation">
   <a 
+    (click)="setTabContent(1)"
     role="tab" 
     href="#"
     id="xTab1id" 
@@ -17,6 +18,7 @@
 </li>
 <li role="presentation">
   <a 
+   (click)="setTabContent(2)"
     role="tab" 
     href="#" 
     id="xTab2id"  
@@ -34,5 +36,5 @@
 </ul>
 
 <div id="AccDC1522875271993" role="tabpanel" tabindex="0" aria-labelledby="xTab1id" aria-describedby="AccDC1522875271997">
-<p>Tab content goes here</p>
+  <p>{{ tabContent }}</p>
 </div>

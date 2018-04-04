@@ -7,16 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablistComponent implements OnInit {
   
-  currentTab: number;
-  tabData: { tab1: "tab 1 content ...", tab2: "tab 2 content ...",};
 
+  tabContent: string;
 
   constructor() {
-      this.currentTab = 0; 
-
+      this.tabContent = "tab content will go here";
    }
 
   ngOnInit() {
+  }
+
+  setTabContent(tabNumber: number) {
+    if(tabNumber === 1){
+      this.tabContent = "Tab 1 Content Lorem impsum...";
+    }
+    if(tabNumber === 2){
+      this.tabContent = "Tab 2 Content Lorem impsum...";
+    }
+
   }
 
 }
