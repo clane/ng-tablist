@@ -1,16 +1,16 @@
 
-<ul class="tabs" role="tablist" aria-owns="xTab1id xTab2id xTab3id xTab4id">
+<ul class="tabs" role="tablist" aria-owns="t1 t2 t3 t4">
 <li role="presentation">
   <a 
-     #tab1
+    #tab1
     (click)="setTabContent(1)"
     (keydown)="handleKeydownOnTabs($event, 1)"
     role="tab" 
     href="#"
-    id="xTab1id" 
+    id="t1" 
     aria-posinset="1" 
     aria-label="Name 1"  
-    aria-setsize="2" 
+    aria-setsize="4" 
   >
       Name 1
     </a>
@@ -22,17 +22,49 @@
    (keydown)="handleKeydownOnTabs($event, 2)"
     role="tab" 
     href="#" 
-    id="xTab2id"  
+    id="t2"  
     aria-posinset="2" 
     aria-label="Name 2" 
-    aria-setsize="2"  
+    aria-setsize="4"  
   >
       Name 2
     </a>
 </li>
 
+<li role="presentation">
+  <a 
+   #tab3
+   (click)="setTabContent(3)"
+   (keydown)="handleKeydownOnTabs($event, 3)"
+    role="tab" 
+    href="#" 
+    id="t3"  
+    aria-posinset="3" 
+    aria-label="Name 3" 
+    aria-setsize="4"  
+  >
+      Name 3
+    </a>
+</li>
+
+<li role="presentation">
+  <a 
+   #tab4
+   (click)="setTabContent(4)"
+   (keydown)="handleKeydownOnTabs($event, 4)"
+    role="tab" 
+    href="#" 
+    id="t4"  
+    aria-posinset="4" 
+    aria-label="Name 4" 
+    aria-setsize="4"  
+  >
+      Name 4
+    </a>
+</li>
+
 </ul>
 
-<div id="theTabPanel" role="tabpanel" tabindex="0" aria-labelledby="xTab1id" aria-describedby="AccDC1522875271997">
+<div id="theTabPanel" role="tabpanel" tabindex="0" aria-labelledby="">
   <p>{{tabContent}}</p>
 </div>
