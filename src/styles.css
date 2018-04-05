@@ -4,3 +4,4 @@ li[role="presentation"]{ display:inline-block; list-style-type:none; margin-righ
 a[role="tab"] { text-decoration:none; } 
 a[role="tab"].active  { text-decoration:underline;  } 
 ul[role="tablist"]{ padding:0; } 
+[role="tabpanel"] { background-color:#ccc; height:500px; padding:20px;  } 
