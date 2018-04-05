@@ -8,11 +8,11 @@ import { Component, ViewChild, ElementRef, Renderer2, OnInit } from '@angular/co
 export class TablistComponent implements OnInit {
 
   tabContent: string;
- 
 
   @ViewChild('tab1') tab1:ElementRef;
   @ViewChild('tab2') tab2:ElementRef;
   @ViewChild('tab3') tab3:ElementRef;
+  @ViewChild('tabPanel') tabPanel:ElementRef;
 
   constructor(private renderer: Renderer2) {}
 
@@ -31,6 +31,7 @@ export class TablistComponent implements OnInit {
       this.renderer.setAttribute(this.tab1.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab1.nativeElement, 'aria-selected', 'true'); 
       this.renderer.setAttribute(this.tab1.nativeElement, 'aria-controls', 'theTabPanel'); 
+      this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't1'); 
     }
 
     if(tabNumber === 2){
@@ -38,6 +39,7 @@ export class TablistComponent implements OnInit {
       this.renderer.setAttribute(this.tab2.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab2.nativeElement, 'aria-selected', 'true'); 
       this.renderer.setAttribute(this.tab2.nativeElement, 'aria-controls', 'theTabPanel'); 
+      this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't2'); 
     }
 
     if(tabNumber === 3){
@@ -45,6 +47,7 @@ export class TablistComponent implements OnInit {
       this.renderer.setAttribute(this.tab3.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab3.nativeElement, 'aria-selected', 'true'); 
       this.renderer.setAttribute(this.tab3.nativeElement, 'aria-controls', 'theTabPanel'); 
+      this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't3'); 
     }
 
   }
@@ -55,18 +58,21 @@ export class TablistComponent implements OnInit {
     this.renderer.setAttribute(this.tab1.nativeElement, 'aria-selected', 'false'); 
     this.renderer.setAttribute(this.tab1.nativeElement, 'aria-expanded', 'false');
     this.renderer.setAttribute(this.tab1.nativeElement, 'aria-controls', ''); 
+    this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', ''); 
 
     //Reset tab 2
     this.renderer.setAttribute(this.tab2.nativeElement, 'tabindex', '-1'); 
     this.renderer.setAttribute(this.tab2.nativeElement, 'aria-selected', 'false'); 
     this.renderer.setAttribute(this.tab2.nativeElement, 'aria-expanded', 'false');
     this.renderer.setAttribute(this.tab2.nativeElement, 'aria-controls', ''); 
+    this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', ''); 
 
     //Reset tab 3
     this.renderer.setAttribute(this.tab3.nativeElement, 'tabindex', '-1'); 
     this.renderer.setAttribute(this.tab3.nativeElement, 'aria-selected', 'false'); 
     this.renderer.setAttribute(this.tab3.nativeElement, 'aria-expanded', 'false');
     this.renderer.setAttribute(this.tab3.nativeElement, 'aria-controls', ''); 
+    this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', ''); 
 
   } 
 
