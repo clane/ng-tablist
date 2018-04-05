@@ -13,15 +13,13 @@ export class TablistComponent implements OnInit {
   @ViewChild('tab1') tab1:ElementRef;
   @ViewChild('tab2') tab2:ElementRef;
 
-  constructor(private renderer: Renderer2) {
-    this.tabContent = "tab content will go here";
-  }
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit() { 
     //Reset the tabs at first
     this.resetTabs();
     //add tab 1 to the tab order to start
-    this.renderer.setAttribute(this.tab1.nativeElement, 'tabindex', '0'); 
+    this.setTabContent(1); 
   }
 
   setTabContent(tabNumber: number) {
@@ -62,11 +60,16 @@ export class TablistComponent implements OnInit {
     console.log(event);
     console.log('in handleKeydownOnTabs'); 
     event.preventDefault();
+    if(event.key === 'Enter'){
+      this.setTabContent(tabNumber);
+    }
     if(event.key === 'ArrowDown' || event.key === 'ArrowRight'){
       if(tabNumber === 1){
         this.tab2.nativeElement.focus();
       }
-
+      if(tabNumber === 1){
+        this.tab2.nativeElement.focus();
+      }
     }
 
   }
