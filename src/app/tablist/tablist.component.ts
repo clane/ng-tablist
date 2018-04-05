@@ -31,6 +31,7 @@ export class TablistComponent implements OnInit {
       this.tabContent = "Tab 1 Content Lorem impsum...";
       this.renderer.setAttribute(this.tab1.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab1.nativeElement, 'aria-selected', 'true'); 
+      this.renderer.setAttribute(this.tab1.nativeElement, 'aria-expanded', 'true'); 
       this.renderer.setAttribute(this.tab1.nativeElement, 'aria-controls', 'theTabPanel'); 
       this.renderer.addClass(this.tab1.nativeElement, 'active'); 
       this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't1'); 
@@ -40,6 +41,7 @@ export class TablistComponent implements OnInit {
       this.tabContent = "Tab 2 Content Lorem impsum...";
       this.renderer.setAttribute(this.tab2.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab2.nativeElement, 'aria-selected', 'true'); 
+      this.renderer.setAttribute(this.tab2.nativeElement, 'aria-expanded', 'true'); 
       this.renderer.setAttribute(this.tab2.nativeElement, 'aria-controls', 'theTabPanel'); 
       this.renderer.addClass(this.tab2.nativeElement, 'active'); 
       this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't2'); 
@@ -49,6 +51,7 @@ export class TablistComponent implements OnInit {
       this.tabContent = "Tab 3 Content Lorem impsum...";
       this.renderer.setAttribute(this.tab3.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab3.nativeElement, 'aria-selected', 'true'); 
+      this.renderer.setAttribute(this.tab3.nativeElement, 'aria-expanded', 'true'); 
       this.renderer.setAttribute(this.tab3.nativeElement, 'aria-controls', 'theTabPanel'); 
       this.renderer.addClass(this.tab3.nativeElement, 'active'); 
       this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't3'); 
@@ -58,6 +61,7 @@ export class TablistComponent implements OnInit {
       this.tabContent = "Tab 4 Content Lorem impsum...";
       this.renderer.setAttribute(this.tab4.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab4.nativeElement, 'aria-selected', 'true'); 
+      this.renderer.setAttribute(this.tab4.nativeElement, 'aria-expanded', 'true'); 
       this.renderer.setAttribute(this.tab4.nativeElement, 'aria-controls', 'theTabPanel'); 
       this.renderer.addClass(this.tab4.nativeElement, 'active'); 
       this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't4'); 
