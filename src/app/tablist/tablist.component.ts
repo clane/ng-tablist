@@ -8,7 +8,6 @@ import { Component, ViewChild, ElementRef, Renderer2, OnInit } from '@angular/co
 export class TablistComponent implements OnInit {
 
   tabContent: string;
-	isActive: boolean;
 
   @ViewChild('tab1') tab1:ElementRef;
   @ViewChild('tab2') tab2:ElementRef;
