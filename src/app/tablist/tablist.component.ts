@@ -105,10 +105,10 @@ export class TablistComponent implements OnInit {
   } 
 
   handleKeydownOnTabs(event, tabNumber: number, ){
-
+    console.log(event);
     event.preventDefault();
 
-    if(event.key === 'Enter'){
+    if(event.key === 'Enter' || event.code === 'Space'){
       this.setTabContent(tabNumber);
     }
 
