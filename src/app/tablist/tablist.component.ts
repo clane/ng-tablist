@@ -12,6 +12,7 @@ export class TablistComponent implements OnInit {
   @ViewChild('tab1') tab1:ElementRef;
   @ViewChild('tab2') tab2:ElementRef;
   @ViewChild('tab3') tab3:ElementRef;
+  @ViewChild('tab4') tab4:ElementRef;
   @ViewChild('tabPanel') tabPanel:ElementRef;
 
   constructor(private renderer: Renderer2) {}
@@ -53,6 +54,15 @@ export class TablistComponent implements OnInit {
       this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't3'); 
     }
 
+    if(tabNumber === 4){
+      this.tabContent = "Tab 4 Content Lorem impsum...";
+      this.renderer.setAttribute(this.tab4.nativeElement, 'tabindex', '0'); 
+      this.renderer.setAttribute(this.tab4.nativeElement, 'aria-selected', 'true'); 
+      this.renderer.setAttribute(this.tab4.nativeElement, 'aria-controls', 'theTabPanel'); 
+      this.renderer.addClass(this.tab4.nativeElement, 'active'); 
+      this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't4'); 
+    }
+
   }
 
   resetTabs () {
@@ -80,6 +90,14 @@ export class TablistComponent implements OnInit {
     this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', ''); 
     this.renderer.removeClass(this.tab3.nativeElement, 'active'); 
 
+    //Reset tab 4
+    this.renderer.setAttribute(this.tab4.nativeElement, 'tabindex', '-1'); 
+    this.renderer.setAttribute(this.tab4.nativeElement, 'aria-selected', 'false'); 
+    this.renderer.setAttribute(this.tab4.nativeElement, 'aria-expanded', 'false');
+    this.renderer.setAttribute(this.tab4.nativeElement, 'aria-controls', ''); 
+    this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', ''); 
+    this.renderer.removeClass(this.tab4.nativeElement, 'active'); 
+
   } 
 
   handleKeydownOnTabs(event, tabNumber: number, ){
@@ -99,24 +117,31 @@ export class TablistComponent implements OnInit {
         this.tab3.nativeElement.focus();
       }
       if(tabNumber === 3){
+        this.tab4.nativeElement.focus();
+      }
+      if(tabNumber === 4){
         this.tab1.nativeElement.focus();
       }
-      
+
     }
 
     if(event.key === 'ArrowUp' || event.key === 'ArrowLeft'){
-
+      //First tab
       if(tabNumber === 1){
-        //first tab
-        this.tab3.nativeElement.focus();
+        this.tab4.nativeElement.focus();
       }
       if(tabNumber === 2){
         this.tab1.nativeElement.focus();
       }
-      if(tabNumber === 3)
+      if(tabNumber === 3){
         this.tab2.nativeElement.focus();
       }
-      
+      if(tabNumber === 4){
+        this.tab3.nativeElement.focus();
+      }
+
+    }
+
   }
 
 }
