@@ -4,6 +4,7 @@
   <a 
      #tab1
     (click)="setTabContent(1)"
+    (keydown)="handleKeydownOnTabs(1)"
     role="tab" 
     href="#"
     id="xTab1id" 
@@ -21,6 +22,7 @@
   <a 
    #tab2
    (click)="setTabContent(2)"
+   (keydown)="handleKeydownOnTabs(1)"
     role="tab" 
     href="#" 
     id="xTab2id"  
@@ -37,6 +39,6 @@
 
 </ul>
 
-<div id="AccDC1522875271993" role="tabpanel" tabindex="0" aria-labelledby="xTab1id" aria-describedby="AccDC1522875271997">
+<div id="theTabPanel" role="tabpanel" tabindex="0" aria-labelledby="xTab1id" aria-describedby="AccDC1522875271997">
   <p>{{ tabContent }}</p>
 </div>

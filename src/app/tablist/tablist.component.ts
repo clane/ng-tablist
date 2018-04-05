@@ -15,7 +15,6 @@ export class TablistComponent implements OnInit {
 
   constructor(private renderer: Renderer2) {
     this.tabContent = "tab content will go here";
-
   }
 
   ngOnInit() { 
@@ -33,32 +32,34 @@ export class TablistComponent implements OnInit {
       this.tabContent = "Tab 1 Content Lorem impsum...";
       this.renderer.setAttribute(this.tab1.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab1.nativeElement, 'aria-selected', 'true'); 
-      this.renderer.setAttribute(this.tab1.nativeElement, 'aria-expanded', 'true'); 
-      
+      this.renderer.setAttribute(this.tab1.nativeElement, 'aria-controls', 'theTabPanel'); 
     }
+
     if(tabNumber === 2){
       this.tabContent = "Tab 2 Content Lorem impsum...";
       this.renderer.setAttribute(this.tab2.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab2.nativeElement, 'aria-selected', 'true'); 
-      this.renderer.setAttribute(this.tab2.nativeElement, 'aria-expanded', 'true'); 
+      this.renderer.setAttribute(this.tab2.nativeElement, 'aria-controls', 'theTabPanel'); 
     }
 
   }
 
   resetTabs () {
-  
     //Reset tab 1
     this.renderer.setAttribute(this.tab1.nativeElement, 'tabindex', '-1'); 
     this.renderer.setAttribute(this.tab1.nativeElement, 'aria-selected', 'false'); 
     this.renderer.setAttribute(this.tab1.nativeElement, 'aria-expanded', 'false');
+    this.renderer.setAttribute(this.tab1.nativeElement, 'aria-controls', ''); 
 
     //Reset tab 2
     this.renderer.setAttribute(this.tab2.nativeElement, 'tabindex', '-1'); 
     this.renderer.setAttribute(this.tab2.nativeElement, 'aria-selected', 'false'); 
     this.renderer.setAttribute(this.tab2.nativeElement, 'aria-expanded', 'false');
-
-
-
+    this.renderer.setAttribute(this.tab2.nativeElement, 'aria-controls', ''); 
   } 
+
+  handleKeydownOnTabs(tabNumber: number){
+
+  }
 
 }
