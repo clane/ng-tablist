@@ -1,2 +1,3 @@
 /* You can add global styles to this file, and also import other style files */
-li[role="presentation"]{ display:inline-block; list-style-type:none; }
+li[role="presentation"]{ display:inline-block; list-style-type:none; margin-right:10px; text-decoration:none; }
+.active { background-color: yellow; text-decoration:underline; } 

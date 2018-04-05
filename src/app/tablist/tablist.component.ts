@@ -8,6 +8,7 @@ import { Component, ViewChild, ElementRef, Renderer2, OnInit } from '@angular/co
 export class TablistComponent implements OnInit {
 
   tabContent: string;
+	isActive: boolean;
 
   @ViewChild('tab1') tab1:ElementRef;
   @ViewChild('tab2') tab2:ElementRef;
@@ -31,6 +32,7 @@ export class TablistComponent implements OnInit {
       this.renderer.setAttribute(this.tab1.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab1.nativeElement, 'aria-selected', 'true'); 
       this.renderer.setAttribute(this.tab1.nativeElement, 'aria-controls', 'theTabPanel'); 
+      this.renderer.addClass(this.tab1.nativeElement, 'active'); 
       this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't1'); 
     }
 
@@ -39,6 +41,7 @@ export class TablistComponent implements OnInit {
       this.renderer.setAttribute(this.tab2.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab2.nativeElement, 'aria-selected', 'true'); 
       this.renderer.setAttribute(this.tab2.nativeElement, 'aria-controls', 'theTabPanel'); 
+      this.renderer.addClass(this.tab2.nativeElement, 'active'); 
       this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't2'); 
     }
 
@@ -47,6 +50,7 @@ export class TablistComponent implements OnInit {
       this.renderer.setAttribute(this.tab3.nativeElement, 'tabindex', '0'); 
       this.renderer.setAttribute(this.tab3.nativeElement, 'aria-selected', 'true'); 
       this.renderer.setAttribute(this.tab3.nativeElement, 'aria-controls', 'theTabPanel'); 
+      this.renderer.addClass(this.tab3.nativeElement, 'active'); 
       this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', 't3'); 
     }
 
@@ -59,6 +63,7 @@ export class TablistComponent implements OnInit {
     this.renderer.setAttribute(this.tab1.nativeElement, 'aria-expanded', 'false');
     this.renderer.setAttribute(this.tab1.nativeElement, 'aria-controls', ''); 
     this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', ''); 
+    this.renderer.removeClass(this.tab1.nativeElement, 'active'); 
 
     //Reset tab 2
     this.renderer.setAttribute(this.tab2.nativeElement, 'tabindex', '-1'); 
@@ -66,6 +71,7 @@ export class TablistComponent implements OnInit {
     this.renderer.setAttribute(this.tab2.nativeElement, 'aria-expanded', 'false');
     this.renderer.setAttribute(this.tab2.nativeElement, 'aria-controls', ''); 
     this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', ''); 
+    this.renderer.removeClass(this.tab2.nativeElement, 'active'); 
 
     //Reset tab 3
     this.renderer.setAttribute(this.tab3.nativeElement, 'tabindex', '-1'); 
@@ -73,6 +79,7 @@ export class TablistComponent implements OnInit {
     this.renderer.setAttribute(this.tab3.nativeElement, 'aria-expanded', 'false');
     this.renderer.setAttribute(this.tab3.nativeElement, 'aria-controls', ''); 
     this.renderer.setAttribute(this.tabPanel.nativeElement, 'aria-labelledby', ''); 
+    this.renderer.removeClass(this.tab3.nativeElement, 'active'); 
 
   } 
 
