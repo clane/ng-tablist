@@ -4,7 +4,7 @@
   <a 
      #tab1
     (click)="setTabContent(1)"
-    (keydown)="handleKeydownOnTabs(1)"
+    (keydown)="handleKeydownOnTabs($event, 1)"
     role="tab" 
     href="#"
     id="xTab1id" 
@@ -22,7 +22,7 @@
   <a 
    #tab2
    (click)="setTabContent(2)"
-   (keydown)="handleKeydownOnTabs(1)"
+   (keydown)="handleKeydownOnTabs($event, 2)"
     role="tab" 
     href="#" 
     id="xTab2id"  

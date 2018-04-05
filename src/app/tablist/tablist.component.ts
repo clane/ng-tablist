@@ -8,7 +8,7 @@ import { Component, ViewChild, ElementRef, Renderer2, OnInit } from '@angular/co
 export class TablistComponent implements OnInit {
 
   tabContent: string;
-  currentTab: number;
+ 
 
   @ViewChild('tab1') tab1:ElementRef;
   @ViewChild('tab2') tab2:ElementRef;
@@ -26,7 +26,7 @@ export class TablistComponent implements OnInit {
 
   setTabContent(tabNumber: number) {
     this.resetTabs();
-    this.currentTab = tabNumber;
+  
 
     if(tabNumber === 1){
       this.tabContent = "Tab 1 Content Lorem impsum...";
@@ -58,7 +58,16 @@ export class TablistComponent implements OnInit {
     this.renderer.setAttribute(this.tab2.nativeElement, 'aria-controls', ''); 
   } 
 
-  handleKeydownOnTabs(tabNumber: number){
+  handleKeydownOnTabs(event, tabNumber: number, ){
+    console.log(event);
+    console.log('in handleKeydownOnTabs'); 
+    event.preventDefault();
+    if(event.key === 'ArrowDown' || event.key === 'ArrowRight'){
+      if(tabNumber === 1){
+        this.tab2.nativeElement.focus();
+      }
+
+    }
 
   }
 
