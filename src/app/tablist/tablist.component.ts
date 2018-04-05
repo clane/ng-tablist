@@ -108,11 +108,11 @@ export class TablistComponent implements OnInit {
     console.log(event);
     event.preventDefault();
 
-    if(event.key === 'Enter' || event.code === 'Space'){
+		if(event.keyCode === 13 || event.keyCode=== 32){ //Enter and space
       this.setTabContent(tabNumber);
     }
 
-    if(event.key === 'ArrowDown' || event.key === 'ArrowRight'){
+		if(event.keyCode === 39  || event.keyCode === 40 ){//right and down arrow
       //First tab
       if(tabNumber === 1){
         this.tab2.nativeElement.focus();
@@ -129,7 +129,7 @@ export class TablistComponent implements OnInit {
 
     }
 
-    if(event.key === 'ArrowUp' || event.key === 'ArrowLeft'){
+		if(event.keyCode === 37 || event.keyCode === 38 ){//up and left arrows
       //First tab
       if(tabNumber === 1){
         this.tab4.nativeElement.focus();
