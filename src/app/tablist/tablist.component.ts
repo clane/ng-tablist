@@ -67,8 +67,16 @@ export class TablistComponent implements OnInit {
       if(tabNumber === 1){
         this.tab2.nativeElement.focus();
       }
+      if(tabNumber === 2){
+        this.tab1.nativeElement.focus();
+      }
+    }
+    if(event.key === 'ArrowUp' || event.key === 'ArrowLeft'){
       if(tabNumber === 1){
         this.tab2.nativeElement.focus();
+      }
+      if(tabNumber === 2){
+        this.tab1.nativeElement.focus();
       }
     }
 
