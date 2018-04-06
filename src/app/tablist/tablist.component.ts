@@ -106,7 +106,7 @@ export class TablistComponent implements OnInit {
 
   handleKeydownOnTabs(event, tabNumber: number, ){
     console.log(event);
-    event.preventDefault();
+		// event.preventDefault();
 
 		if(event.keyCode === 13 || event.keyCode=== 32){ //Enter and space
       this.setTabContent(tabNumber);
